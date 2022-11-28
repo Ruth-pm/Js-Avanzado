@@ -1,0 +1,57 @@
+
+.contenedor {
+    margin: 2rem;
+    width: 100%;
+    
+}
+h1{
+    text-align: center;
+    color: #323232;
+}
+hr {
+    width: 80%;
+    margin: 1rem 7rem;
+}
+.seccion-table{
+    width: 80%;
+    margin: 1rem 7rem;
+    text-align: center;
+}
+
+.seccion-table th{
+    
+    background-color: #3b3b3b;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    padding: 1.4rem;  
+    border: #fff 2px solid;
+
+}
+.seccion-table th:hover{
+    background-color: #2267cd;
+}
+
+.seccion-table td{
+    background-color: #eaeaea;
+    text-transform: capitalize;
+    padding: 1rem;
+    border: #fff 2px solid;
+
+}
+button {
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    width: 18%;
+    padding: 12px;
+    margin: 4px;
+    border-color: #fff;
+    font-weight: 460;
+    font-size: 18px;
+}
+.contenedor-button{
+    display: flex;
+    justify-content: end;
+    width: 88%;
+}
