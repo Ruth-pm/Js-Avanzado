@@ -36,6 +36,6 @@ function calcular(e) {
 
     const respuesta=document.getElementById('respuesta')
     respuesta.textContent=`${name} ${lastname} de Categoría ${catg} y con ${tiempoS} años de servicio laborable recibirá: ` 
-    const sueldoneto=document.getElementById('sueldoneto')
-    sueldoneto.textContent=` Sueldo Básico: S/. ${sueldoInicial} - Bonificación por años de Servicio: S/. ${tiempoServicio} - Sueldo Neto: S/. ${sueldoFinal}` 
+    const sueldofinal=document.getElementById('sueldofinal')
+    sueldofinal.textContent=` Sueldo Básico: S/. ${sueldoInicial} - Bonificación por años de Servicio: S/. ${tiempoServicio} - Sueldo Neto: S/. ${sueldoFinal}` 
 }
