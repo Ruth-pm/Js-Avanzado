@@ -138,7 +138,7 @@ div.append(btnActualizar)
 const btnEliminar = document.createElement("button")
 btnEliminar.textContent = "Eliminar"
 btnEliminar.style.background = "#df222f"
-btnEliminar.addEventListener("click",() => eliminarRegistro)
+btnEliminar.addEventListener("click", eliminarRegistro)
 div.append(btnEliminar)
 
 }
