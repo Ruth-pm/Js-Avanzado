@@ -18,7 +18,7 @@
                 }else if (property === "nombre" || property === "apellido" || property === "edad" || property === "profesion"){
                     newUsuario[property] = prompt(`Ingrese su ${[property]} aquí: `)
                 }else if (property === "created_at"){
-                    newUsuario[property] = new Date()
+                    newUsuario[property] = new Date().toISOString()
                 }else{
                     return;
                 }
@@ -57,10 +57,8 @@ function ordenarPorFecha(reverse) {
 
 //13. Crear una funcion que permita filtrar los usuarios por mes y año de creacion.
 //  function filtrarFecha() {
-//     const fecha = prompt("Ingrese fecha")
-//     const filtrar = users.filter((user) => {
-//         const fechaUsuario = user.created_at.split(" ")[0]
-//         return filtarFecha
+//     const filtrar = users.filter((prop) => {
+//         const fechaUsuario = new Date(prop.created_at)
 //     })
 //     tablaUsuarios(users)
 //  }
@@ -98,7 +96,17 @@ for(const property in users[0]){
     th.innerText = property
     th.style.cursor = "pointer"
     tr.append(th)
-    th.addEventListener("click", ordenarHeaders)
+    th.addEventListener("click", () =>{
+        tbody.innerHTML=""
+        if (reversa === false) {
+            ordenarHeaders(reversa, th.textContent)
+            reversa = true
+        }else{
+            ordenarHeaders(reversa, th.textContent)
+            reversa = false
+        }
+        tablaUsuarios(users)
+    })
 }
 thead.append(tr)
 table.append(thead)
@@ -115,7 +123,12 @@ const div = document.createElement("div")
 div.classList.add("contenedor-button")
 root.append(div)
 
-
+const btnLeer = document.createElement("button")
+btnLeer.textContent = "Ver Registro"
+btnLeer.style.background = "#0075FF"
+btnLeer.addEventListener("click", verRegistro)
+div.append(btnLeer)
+    
 const btnActualizar = document.createElement("button")
 btnActualizar.textContent = "Actualizar"
 btnActualizar.style.background = "#ef8c00"
@@ -134,7 +147,9 @@ tablaUsuarios()
 // READ
 // El admin debe poder visualizar en pantalla los registros que estan siendo creados.
 
-
+function verRegistro() {
+    tablaUsuarios(users)
+}
 // UPDATE
 // El admin, al presionar un boton: "Modificar registro" en la parte inferior de la lista de registros, debe
 // ver un prompt que le pida que ingrese el id del registro que desea modificar, en caso no ingrese ninguno,
@@ -173,7 +188,27 @@ function actualizarRegistro() {
 // deberia volver a la pagina inicial sin que se haya borrado ningun registro.
 
 //FUNCIÓN DELETE (ELIMINAR REGISTRO)
-
+function eliminarRegistro() {
+    if (users.length > 0) {
+        const idEliminar = +prompt("Ingrese el id del usuario que desea eliminar")
+        for(index in users){
+            if (users[index].id == idEliminar) {
+                const rpta = prompt(`El id ${idEliminar} si existe. ¿Está usted seguro?, SI/NO`)
+                if(rpta.toLowerCase() === "si"){
+                    users.splice(index, 1);
+                    alert("Usuario eliminado")
+                } else if (rpta.toLowerCase() === "no"){
+                    alert("No se elimino ningun usuario de la tabla")
+                }else{
+                    return eliminarRegistro()
+                }
+            }
+        }
+    } else {
+        alert("Error:Ingrese un id válido")
+    }
+    tablaUsuarios(users)
+}
  
 // OPCIONAL1: Añadir a la tabla la funcionalidad de ordenar los registros al hacer click en los encabezados
 // (como en el caso de Pokemon). Sin embargo, al momento de hacer click nuevamente en el encabezado, los datos
