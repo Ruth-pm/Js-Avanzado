@@ -1,16 +1,14 @@
-
 body {
-	margin: 0;
+    margin: 0;
     padding: 0;
     background: #8A2387; 
     background: -webkit-linear-gradient(to left, #F27121, #E94057, #8A2387); 
-    background: linear-gradient(to left, #F27121, #E94057, #8A2387); 
-    
+    background: linear-gradient(to left, #F27121, #E94057, #8A2387);  
 }
 .contenedor {
-	width: 40%;
-	margin: 5rem auto;
-	padding: 40px;
+    width: 40%;
+    margin: 5rem auto;
+    padding: 40px;
     background: #e7e7e7;
     border-radius: 10px;
     box-shadow: 11px 8px 8px rgb(32, 32, 32);
@@ -22,106 +20,105 @@ h2 {
 }
 /* Estilos formulario*/
 .form {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
 .form-label {
-	display: block;
-	font-weight: 700;
-	padding: 10px;
-	cursor: pointer;
+    display: block;
+    font-weight: 700;
+    padding: 10px;
+    cursor: pointer;
     margin-bottom: 0;
 }
 
 .form-seccion-input {
-	position: relative;
+    position: relative;
 }
 
 .form-input {
-	width: 100%;
-	height: 45px;
-	line-height: 45px;
-	padding: 0 40px 0 10px;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 40px 0 10px;
     background: #fff;
     border-radius: 3px;
-	border: 3px solid transparent;
-	transition: .3s ease all;
+    border: 3px solid transparent;
+    transition: .3s ease all;
 }
 
 .form-input:focus {
-	border: 3px solid #0075FF;
-	outline: none;
-	box-shadow: 3px 0px 30px rgba(148, 148, 148, 0.4);
+    border: 3px solid #0075FF;
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(148, 148, 148, 0.4);
 }
 
 .form-input-error {
-	font-size: 12px;
-	margin-bottom: 0;
-	display: none;
+    font-size: 12px;
+    margin-bottom: 0;
+    display: none;
 }
 
 .form-input-error-activo {
-	display: block;
+    display: block;
 }
 
 .validacion-estado {
-	position: absolute;
-	right: 10px;
-	bottom: 15px;
-	z-index: 100;
-	font-size: 16px;
-	opacity: 0;
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    z-index: 100;
+    font-size: 16px;
+    opacity: 0;
 }
 
 .form-mensaje,
 .form-seccion-btn-registrar {
-	grid-column: span 2;
+    grid-column: span 2;
 }
 
 .form-mensaje {
-	height: 30px;
+    height: 30px;
     color: #ee0e03;
     font-weight: 700;
     font-size: 1rem;
     text-transform: uppercase;
     text-align: center;
-	display: none;
+    display: none;
 }
 
 .form-mensaje-activo {
-	display: block;
+    display: block;
 }
 
 .form-seccion-btn-registrar{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .form-btn {
-	height: 48px;
-	line-height: 45px;
-	width: 100%;
+    height: 48px;
+    line-height: 45px;
+    width: 100%;
     font-weight: bold;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: .2s ease all;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .2s ease all;
     margin-top: 0.5rem;
-	/* background: #181507; */
     background: #8A2387; 
     background: -webkit-linear-gradient(to left, #F27121, #E94057, #8A2387); 
     background: linear-gradient(to left, #F27121, #E94057, #8A2387); 
-	color: #fff;
+    color: #fff;
     box-shadow: 7px 5px 5px rgb(32, 32, 32);
 	
 }
 
 .form-mensaje-exito {
-	font-size: 15px;
-	display: none;
+    font-size: 15px;
+    display: none;
     margin-top: 1rem;
     font-weight: 650;
     text-transform: uppercase;
@@ -129,21 +126,21 @@ h2 {
 }
 
 .form-mensaje-exito-activo {
-	display: block;
+      display: block;
 }
 
 /* Cambio de colores en validacion */
 .form-seccion-correcto .validacion-estado {
-	color: #1ed12d;
-	opacity: 1;
+     color: #1ed12d;
+     opacity: 1;
 }
 .form-seccion-incorrecto .form-label {
-	color: #ee0e03;
+     color: #ee0e03;
 }
 .form-seccion-incorrecto .validacion-estado {
-	color: #ee0e03;
-	opacity: 1;
+    color: #ee0e03;
+    opacity: 1;
 }
 .form-seccion-incorrecto .form-input {
-	border: 3px solid #ee0e03;
+    border: 3px solid #ee0e03;
 }
